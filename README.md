@@ -1,27 +1,33 @@
-# Angular3
+# Angular Material Scientific Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+Applicazione calcolatrice interattiva sviluppata con **Angular (v17+)**, focalizzata sull'integrazione della libreria UI **Angular Material** e sulla gestione della logica di calcolo dinamica.
 
-## Development server
+## Descrizione
+Il progetto implementa una calcolatrice funzionale ospitata all'interno di un componente dedicato (`TableComponent`). L'interfaccia utente è costruita utilizzando i componenti avanzati di Google (Material Design), garantendo un look professionale e reattivo. La logica di calcolo sfrutta il parsing dinamico delle stringhe per eseguire operazioni aritmetiche in tempo reale.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funzionamento del Sistema:
+* **Integrazione Angular Material**: Utilizzo di moduli specifici come `MatButtonModule`, `MatFormFieldModule` e `MatInputModule` per un'esperienza utente moderna e accessibile.
+* **Componentizzazione**: Suddivisione dell'app in un componente principale (`AppComponent`) che funge da layout e un componente specializzato (`TableComponent`) per la logica di business.
+* **String Buffering Logic**: Accumulo degli input dell'utente in una variabile di tipo stringa attraverso la funzione `clickButton()`, simulando il comportamento di una calcolatrice reale.
+* **Dynamic Expression Evaluation**: Utilizzo della funzione `eval()` per processare la stringa di input come espressione matematica e restituire il risultato immediato.
+* **Layout Management**: Organizzazione dei tasti tramite una struttura tabellare CSS-styled per garantire l'allineamento perfetto dei tasti numerici e degli operatori.
+* **Async Animations**: Configurazione di `provideAnimationsAsync()` nell'app config per supportare i feedback visivi (ripple effect) tipici del Material Design.
 
-## Build
+## Tecnologie e Concetti
+* **Angular Material**: Libreria di componenti UI basata su Material Design.
+* **Event Handling**: Gestione dei click sui tasti per aggiornare lo stato dell'input o resettare la memoria (`cancel`).
+* **Standalone Components**: Architettura priva di moduli (NgModules) per una gestione più snella delle dipendenze.
+* **CSS Flexbox & Centering**: Tecniche di posizionamento avanzate per centrare l'applicazione nella viewport del browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Struttura dell'Interfaccia
+| Categoria | Componenti Material | Scopo |
+| :--- | :--- | :--- |
+| **Display** | `matInput` (Disabled) | Visualizzazione dei numeri e del risultato finale |
+| **Numeri** | `mat-flat-button` (Primary) | Pulsanti per l'inserimento delle cifre 0-9 |
+| **Operazioni** | `mat-stroked-button` | Tasti per operatori (+, -, *, /) e calcolo (=) |
+| **Reset** | `mat-flat-button` (Warn) | Funzione di pulizia totale della stringa di input |
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+*Progetto sviluppato per consolidare le competenze di integrazione tra framework logici e librerie di design professionale.*
